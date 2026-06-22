@@ -306,6 +306,26 @@
       body.appendChild(justDiv);
     }
 
+    // C1 traceability
+    if (cell.c1_explanation) {
+      const c1Div = document.createElement('div');
+      c1Div.className = 'justification';
+      c1Div.innerHTML =
+        '<div class="justification-label">C1 Traceability (UAM Specificity)</div>' +
+        '<p>' + escapeHtml(cell.c1_explanation) + '</p>';
+      body.appendChild(c1Div);
+    }
+
+    // C3 traceability
+    if (cell.c3_explanation) {
+      const c3Div = document.createElement('div');
+      c3Div.className = 'justification';
+      c3Div.innerHTML =
+        '<div class="justification-label">C3 Traceability (Institutional Competence)</div>' +
+        '<p>' + escapeHtml(cell.c3_explanation) + '</p>';
+      body.appendChild(c3Div);
+    }
+
     // Metadata grid
     const metaGrid = document.createElement('div');
     metaGrid.className = 'meta-grid';
