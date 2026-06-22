@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D x 9T Regulatory Governance Matrix — UAM Brazil</title>
+  <meta name="description" content="Interactive traceability portal for the 3D x 9T Regulatory Governance Matrix assessing Urban Air Mobility (UAM) regulatory readiness in Brazil.">
+  <meta name="author" content="Marcelo Saraiva Peres">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="navbar-brand">
+      3D x 9T Matrix <span>| UAM Regulatory Portal</span>
+    </a>
+    <button class="navbar-toggle" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="navbar-links">
+      <a href="index.html" class="active">Matrix</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="methodology.html#about">About</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <header class="page-header">
+      <h1>3D x 9T Regulatory Governance Matrix</h1>
+      <p>Baseline assessment of Brazilian federal regulatory readiness for Urban Air Mobility (UAM/eVTOL). Click any cell to view the full scoring justification and evidence trail.</p>
+    </header>
+
+    <!-- Legend -->
+    <div id="legend-container" class="legend" role="img" aria-label="Score legend: 0 = Absent, 1 = Partial, 2 = Adequate"></div>
+
+    <!-- Matrix -->
+    <div class="matrix-wrapper">
+      <div id="matrix-container"></div>
+    </div>
+
+    <!-- Aggregates -->
+    <section class="aggregates-section">
+      <h2>Aggregate Scores</h2>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+        Values shown as: discrete average (0-2 scale) / raw average (0-10 scale).
+      </p>
+      <div id="aggregates-container" class="agg-grid"></div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modal-title"></h2>
+        <button id="modal-close" class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div id="modal-body" class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Supplementary Material &mdash; PhD Thesis, Aeronautics Institute of Technology (ITA), Brazil</p>
+    <p>Marcelo Saraiva Peres &middot; 2026 &middot; <a href="methodology.html#about" style="color: inherit;">Citation Info</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

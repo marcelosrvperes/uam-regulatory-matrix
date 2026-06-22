@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methodology — 3D x 9T Regulatory Governance Matrix</title>
+  <meta name="description" content="Scoring methodology for the 3D x 9T Regulatory Governance Matrix: criteria C1, C2, C3 and the 0-1-2 discretization scale.">
+  <meta name="author" content="Marcelo Saraiva Peres">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="navbar-brand">
+      3D x 9T Matrix <span>| UAM Regulatory Portal</span>
+    </a>
+    <button class="navbar-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.navbar-links').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="navbar-links">
+      <a href="index.html">Matrix</a>
+      <a href="methodology.html" class="active">Methodology</a>
+      <a href="methodology.html#about">About</a>
+    </div>
+  </nav>
+
+  <div class="content-page">
+    <h1>Scoring Methodology</h1>
+    <p>This page describes the criteria, weighting, and discretization process used to score each cell of the 3D x 9T Regulatory Governance Matrix.</p>
+
+    <!-- =============== FRAMEWORK OVERVIEW =============== -->
+    <h2>Framework Overview</h2>
+    <p>The matrix evaluates the regulatory readiness of Brazil's federal framework for Urban Air Mobility (UAM) operations, specifically electric vertical takeoff and landing (eVTOL) aircraft integration into urban environments.</p>
+    <p>The framework intersects <strong>3 governance dimensions</strong> with <strong>9 thematic areas</strong>, yielding 27 assessment cells. Each cell is scored using three complementary criteria (C1, C2, C3) that capture different facets of regulatory maturity.</p>
+
+    <h3>Dimensions (Rows)</h3>
+    <table>
+      <thead>
+        <tr><th>Code</th><th>Dimension</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>D1</strong></td>
+          <td>Actors &amp; Competencies<br><em>(Atores e Compet&ecirc;ncias)</em></td>
+          <td>Identifies whether specific regulatory bodies hold clear mandates and institutional competencies relevant to UAM in each thematic area.</td>
+        </tr>
+        <tr>
+          <td><strong>D2</strong></td>
+          <td>Normative Instruments<br><em>(Instrumentos Normativos)</em></td>
+          <td>Evaluates whether binding legal/regulatory instruments (laws, resolutions, regulations) exist and are operationally applicable to UAM.</td>
+        </tr>
+        <tr>
+          <td><strong>D3</strong></td>
+          <td>Territorial Integration<br><em>(Integra&ccedil;&atilde;o Regulat&oacute;ria Territorial)</em></td>
+          <td>Assesses whether regulatory provisions are integrated with territorial planning (municipal zoning, spatial coordination, multi-level governance).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Themes (Columns)</h3>
+    <table>
+      <thead>
+        <tr><th>Code</th><th>Theme</th><th>Portuguese Label</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>T1</td><td>Urban Noise</td><td>Ru&iacute;do Urbano</td></tr>
+        <tr><td>T2</td><td>Social Integration</td><td>Integra&ccedil;&atilde;o Social</td></tr>
+        <tr><td>T3</td><td>Land Use</td><td>Uso do Solo</td></tr>
+        <tr><td>T4</td><td>Energy Infrastructure</td><td>Infraestrutura Energ&eacute;tica</td></tr>
+        <tr><td>T5</td><td>Vertiport Infrastructure</td><td>Infraestrutura de Vertiportos</td></tr>
+        <tr><td>T6</td><td>Airspace Governance</td><td>Governan&ccedil;a do Espa&ccedil;o A&eacute;reo</td></tr>
+        <tr><td>T7</td><td>Environment</td><td>Meio Ambiente</td></tr>
+        <tr><td>T8</td><td>Supporting Technologies</td><td>Tecnologias de Suporte</td></tr>
+        <tr><td>T9</td><td>Economic Viability</td><td>Viabilidade Econ&ocirc;mica</td></tr>
+      </tbody>
+    </table>
+
+    <!-- =============== SCORING CRITERIA =============== -->
+    <h2>Scoring Criteria (C1, C2, C3)</h2>
+    <p>Each cell is assessed on three independent criteria, each scored on a continuous 0&ndash;10 scale:</p>
+
+    <h3>C1 &mdash; UAM Specificity (<code>C1_especificidade_uam</code>)</h3>
+    <p>Measures the degree to which existing regulatory instruments explicitly address UAM/eVTOL operations, as opposed to covering the theme only through generic aviation or urban planning provisions.</p>
+    <table>
+      <thead><tr><th>Range</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>0&ndash;3</td><td>No UAM-specific provisions; coverage only by analogy or general legislation</td></tr>
+        <tr><td>4&ndash;6</td><td>Some provisions applicable to UAM through adaptation of existing rules</td></tr>
+        <tr><td>7&ndash;10</td><td>Explicit UAM/eVTOL references in normative instruments</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Input:</strong> Computed from the corpus analysis pipeline based on document keyword matching and semantic relevance scoring. The metric is derived from the ratio of UAM-direct documents (<code>n_uam_direto</code>) to total relevant documents (<code>n_docs_relevantes</code>), weighted by document relevance scores.</p>
+
+    <h3>C2 &mdash; Operationality (<code>C2_operacionalidade</code>)</h3>
+    <p>Expert-assessed criterion reflecting whether the regulatory provisions identified can be <em>operationally applied</em> to UAM scenarios in their current form, without requiring new rulemaking.</p>
+    <table>
+      <thead><tr><th>Range</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>0&ndash;3</td><td>Instruments exist but are inoperative or inapplicable to UAM without major reform</td></tr>
+        <tr><td>4&ndash;6</td><td>Instruments are partially operative; adaptations or interpretive guidance needed</td></tr>
+        <tr><td>7&ndash;10</td><td>Instruments are directly operative for UAM with minimal or no adaptation</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Input:</strong> Researcher qualitative judgment. Each C2 score is accompanied by a written justification note (<code>c2_nota</code>) that documents the reasoning and evidence considered. These notes are visible in the cell detail view of the interactive matrix.</p>
+
+    <h3>C3 &mdash; Institutional Competence (<code>C3_competencia_inst</code>)</h3>
+    <p>Measures the clarity and robustness of the institutional mandate held by relevant regulatory bodies for the specific theme.</p>
+    <table>
+      <thead><tr><th>Range</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>0&ndash;3</td><td>No body has a clear mandate for this theme in the UAM context</td></tr>
+        <tr><td>4&ndash;6</td><td>One or more bodies have related mandates, but coordination gaps or overlaps exist</td></tr>
+        <tr><td>7&ndash;10</td><td>Clear institutional mandate with defined competencies for the theme</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Input:</strong> Derived from institutional mapping of regulatory bodies (<code>orgaos_presentes</code>) identified in the corpus, cross-referenced with their legal mandates.</p>
+
+    <!-- =============== WEIGHTING & AGGREGATION =============== -->
+    <h2>Weighting and Aggregation</h2>
+    <p>The three criteria are combined into a single raw score using a weighted average:</p>
+
+    <div class="formula-block">
+      score_raw = w<sub>1</sub> &middot; C1 + w<sub>2</sub> &middot; C2 + w<sub>3</sub> &middot; C3
+    </div>
+
+    <p>where <code>w<sub>1</sub> = 0.35</code>, <code>w<sub>2</sub> = 0.35</code>, <code>w<sub>3</sub> = 0.30</code>. These weights reflect the roughly equal importance of specificity and operationality, with a slightly lower weight for institutional competence (which tends to be higher across the board due to Brazil's mature institutional framework).</p>
+
+    <p>The resulting <code>score_raw_010</code> is on a continuous 0&ndash;10 scale.</p>
+
+    <!-- =============== DISCRETIZATION =============== -->
+    <h2>Discretization: The 0-1-2 Scale</h2>
+    <p>For the heatmap visualization and policy interpretation, the continuous raw score is discretized into a three-level ordinal scale:</p>
+
+    <table>
+      <thead>
+        <tr><th>Discrete Score</th><th>Raw Range</th><th>Interpretation</th><th>Color</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>0</strong></td>
+          <td>0.00 &ndash; 3.33</td>
+          <td><strong>Absent / Critical Gap</strong> &mdash; No meaningful regulatory coverage for UAM in this cell. New instruments or institutional mandates are required.</td>
+          <td style="background:#dc3545;color:#fff;text-align:center;font-weight:700;">Red</td>
+        </tr>
+        <tr>
+          <td><strong>1</strong></td>
+          <td>3.34 &ndash; 6.66</td>
+          <td><strong>Partial / Analogous Coverage</strong> &mdash; Some regulatory provisions exist but are generic, require adaptation, or lack UAM specificity. Incremental reform or guidance may suffice.</td>
+          <td style="background:#ffc107;color:#212529;text-align:center;font-weight:700;">Amber</td>
+        </tr>
+        <tr>
+          <td><strong>2</strong></td>
+          <td>6.67 &ndash; 10.00</td>
+          <td><strong>Adequate / UAM-Specific</strong> &mdash; Regulatory provisions explicitly address UAM/eVTOL with operational clarity and institutional backing.</td>
+          <td style="background:#28a745;color:#fff;text-align:center;font-weight:700;">Green</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- =============== CORPUS =============== -->
+    <h2>Normative Corpus</h2>
+    <p>The assessment is based on a curated corpus of <strong>56 federal binding normative instruments</strong> from Brazilian regulatory bodies including:</p>
+    <ul>
+      <li><strong>ANAC</strong> &mdash; Ag&ecirc;ncia Nacional de Avia&ccedil;&atilde;o Civil (Civil Aviation Authority)</li>
+      <li><strong>DECEA</strong> &mdash; Departamento de Controle do Espa&ccedil;o A&eacute;reo (Airspace Control Department)</li>
+      <li><strong>ANATEL</strong> &mdash; Ag&ecirc;ncia Nacional de Telecomunica&ccedil;&otilde;es (Telecommunications Authority)</li>
+      <li><strong>ANEEL</strong> &mdash; Ag&ecirc;ncia Nacional de Energia El&eacute;trica (Electricity Authority)</li>
+      <li><strong>CONAMA</strong> &mdash; Conselho Nacional do Meio Ambiente (National Environment Council)</li>
+      <li><strong>IBAMA</strong> &mdash; Instituto Brasileiro do Meio Ambiente (Environmental Institute)</li>
+      <li><strong>Congresso Nacional</strong> &mdash; Federal legislation (Laws, Decrees)</li>
+    </ul>
+    <p>Inclusion criteria: only federally binding instruments (laws, decrees, resolutions, regulations, technical instructions) are considered. Non-binding documents (technical standards, municipal plans, NBR/ABNT norms) are excluded per ADR-009 of the thesis methodology.</p>
+
+    <!-- =============== LIMITATIONS =============== -->
+    <h2>Limitations</h2>
+    <ul>
+      <li><strong>Federal scope only:</strong> The matrix assesses federal-level instruments. State and municipal regulations, which are critical for territorial integration (D3), are not in scope.</li>
+      <li><strong>Temporal snapshot:</strong> Scores reflect the normative corpus as collected during the research period (2024&ndash;2026). UAM regulation is evolving rapidly.</li>
+      <li><strong>C2 subjectivity:</strong> The operationality criterion (C2) is based on researcher judgment. Sensitivity analysis and planned Delphi validation mitigate this limitation.</li>
+      <li><strong>Binary presence:</strong> C1 captures specificity through keyword and semantic matching; nuances of regulatory quality beyond presence/absence are addressed through C2.</li>
+    </ul>
+
+    <!-- =============== ABOUT =============== -->
+    <h2 id="about">About This Portal</h2>
+    <p>This interactive portal is published as Supplementary Material to the article:</p>
+
+    <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin: 1rem 0;">
+      <p style="margin-bottom: 0.5rem;"><strong>Peres, M. S.</strong> (2026). Regulatory Governance of Urban Air Mobility: A Three-Dimensional Framework for Assessing Federal Readiness in Brazil.</p>
+      <p style="margin-bottom: 0.5rem;">PhD Thesis &mdash; Aeronautics Institute of Technology (ITA) / Universidade Anhembi Morumbi (UAM)</p>
+      <p style="margin-bottom: 0;"><em>Advisor:</em> [Advisor name] &middot; Program: Transportation Engineering</p>
+    </div>
+
+    <h3>Citation</h3>
+    <p>If referencing this supplementary material, please cite:</p>
+    <div style="background: var(--bg); border-left: 4px solid var(--text-secondary); padding: 1rem 1.25rem; margin: 1rem 0; font-family: var(--mono); font-size: 0.85rem;">
+      Peres, M. S. (2026). 3D x 9T Regulatory Governance Matrix: Interactive Scoring Portal [Supplementary Material]. Available at: [GitHub Pages URL]
+    </div>
+
+    <h3>Contact</h3>
+    <p>For questions about the methodology or data, contact the author at the Aeronautics Institute of Technology (ITA), S&atilde;o Jos&eacute; dos Campos, SP, Brazil.</p>
+
+    <h3>Technical Notes</h3>
+    <ul>
+      <li>This portal is a static website (HTML + CSS + JavaScript) with no server-side dependencies.</li>
+      <li>All data is embedded in <code>data.json</code>, converted from the pipeline output <code>06_baseline_matriz.csv</code>.</li>
+      <li>No external CDN or third-party libraries are used.</li>
+      <li>The portal is designed for GitHub Pages hosting.</li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Supplementary Material &mdash; PhD Thesis, Aeronautics Institute of Technology (ITA), Brazil</p>
+    <p>Marcelo Saraiva Peres &middot; 2026 &middot; <a href="methodology.html#about" style="color: inherit;">Citation Info</a></p>
+  </footer>
+
+</body>
+</html>
